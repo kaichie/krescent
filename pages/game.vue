@@ -8,6 +8,7 @@
       </HemisphericLight>
       <DirectionalLight :direction="[0, 100, 10]"></DirectionalLight>
       <Buggy></Buggy>
+      <Enemy ref="refEnemy"></Enemy>
       <Planet></Planet>
     </Scene>
   </div>
@@ -17,14 +18,26 @@
 import Vue from "vue";
 import Planet from "../components/Planet.vue";
 import Buggy from "../components/Buggy.vue";
+import Enemy from "../components/Enemy.vue";
 
 export default Vue.extend({
   components: {
     Planet,
     Buggy,
+    Enemy,
   },
   data() {
     return {};
+  },
+  mounted() {
+    setInterval(() => {
+      this.main_loop();
+    }, 100);
+  },
+  methods: {
+    main_loop() {
+      // this.$refs.refEnemy.moveEnemy();
+    },
   },
 });
 </script>
