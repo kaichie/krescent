@@ -1,8 +1,9 @@
-@import '~ant-design-vue/dist/antd.less';
+@import "~ant-design-vue/dist/antd.less";
 
-:root {
-  --primary: #fc039d;
-  --secondary: #7a4dab;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 @primary-color: #fc039d; // primary color for all components
@@ -34,6 +35,14 @@ p {
 
 h1 {
   font-size: 80px;
+
+  @media screen and (max-width: 425px) {
+    font-size: 60px;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 50px;
+  }
 }
 
 h2 {
@@ -42,22 +51,4 @@ h2 {
 
 h3 {
   font-size: 60px;
-}
-
-.krs__container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: url("~assets/background.jpg");
-  background-color: black;
-  background-size: cover;
-}
-
-.krs__title {
-  display: block;
-  font-weight: 300;
-  color: var(--primary);
 }
